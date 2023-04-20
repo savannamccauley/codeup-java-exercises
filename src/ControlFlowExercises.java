@@ -3,6 +3,10 @@ import java.util.Scanner;
 public class ControlFlowExercises {
     public static void main
             (String[] args) {
+        int x = 5;
+        System.out.println(x > 2 ? x < 4 ? 10 : 8 : 7);
+    }
+
 //        int i = 5;
 //        while (i<=15){
 //            System.out.print(i);
@@ -87,27 +91,27 @@ public class ControlFlowExercises {
 //            choice = scanner.next();
 //        } while (choice.equalsIgnoreCase("y"));
 ////
-        boolean confirm = true;
-        do {
-            System.out.println("Enter a numerical grade from 0-100");
-            int userGrade = scanner.nextInt();
-
-            if (userGrade >= 88) {
-                System.out.println("A");
-            } else if (userGrade >= 80) {
-                System.out.println("B");
-            } else if (userGrade >= 67) {
-                System.out.println("C");
-            } else if (userGrade >= 60) {
-                System.out.println("D");
-            } else if (userGrade >= 0) {
-                System.out.println("F");
-            }
-            System.out.println("Continue [y/n]");
-            confirm = scanner.next().equalsIgnoreCase("y");
-        }while(confirm);
-        System.out.println("bye bye");
-    }
+//        boolean confirm = true;
+//        do {
+//            System.out.println("Enter a numerical grade from 0-100");
+//            int userGrade = scanner.nextInt();
+//
+//            if (userGrade >= 88) {
+//                System.out.println("A");
+//            } else if (userGrade >= 80) {
+//                System.out.println("B");
+//            } else if (userGrade >= 67) {
+//                System.out.println("C");
+//            } else if (userGrade >= 60) {
+//                System.out.println("D");
+//            } else if (userGrade >= 0) {
+//                System.out.println("F");
+//            }
+//            System.out.println("Continue [y/n]");
+//            confirm = scanner.next().equalsIgnoreCase("y");
+//        }while(confirm);
+//        System.out.println("bye bye");
+//    }
 }
 
 
