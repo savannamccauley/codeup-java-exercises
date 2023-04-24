@@ -6,54 +6,53 @@ import java.util.Scanner;
 
 public class Input {
     private Scanner scanner;
-    public Input(){
+
+    public Input() {
         this.scanner = new Scanner(System.in);
     }
-    public String getString(){
+
+    public String getString() {
         System.out.println("enter a string");
         return this.scanner.nextLine();
     }
-    public boolean yesNo(){
+
+    public boolean yesNo() {
         System.out.println("Enter yes or no:");
         String input = scanner.nextLine().toLowerCase();
-        return input.equals("y")|| input.equals("yes");
+        return input.equals("y") || input.equals("yes");
     }
-    public int getInt (int min ,int max){
-        System.out.println("Enter a number between "+ min +"and "+ max);
+
+    public int getInt(int min, int max) {
+        System.out.println("Enter a number between " + min + "and " + max);
+        int input = scanner.nextInt();
+        if (input < min || input > max) {
+            return getInt(min, max);
+        }
+        return input;
+    }
+
+    public int getInt() {
+        System.out.println("Please enter a number");
         int input = scanner.nextInt();
         return input;
     }
-    public int getInt(int input, int min, int max){
-        System.out.println("Enter a number between "+ min +"and "+ max);
-        if((input > min) && (input <max)){
-            return input;
-            System.out.println("correct number");
-        }else{
-            return ;
+    public double getDouble(double min, double max){
+        System.out.println("Enter a number between "+ min +"and " + max);
+        double input = scanner.nextDouble();
+        if (input < min || input > max) {
+            return getDouble(min, max);
         }
+        return input;
+
     }
-
-
-
-
-
-
-    public class InputTest {
-        public static void main
-                (String[] args) {
-//        Input input = new Input();
-//        String name = input.getString();
-//        System.out.println("Hello, " + name + "!");
-
-            Input input = new Input();
-            boolean likesPizza = input.yesNo();
-            if (likesPizza) {
-                System.out.println("Yes");
-            } else {
-                System.out.println("no");
-            }
-
-        }
+    public double getDouble(){
+        System.out.println("Please enter a number");
+        int input = scanner.nextInt();
+        return input;
     }
 
 }
+
+
+
+
