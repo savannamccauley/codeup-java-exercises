@@ -12,11 +12,27 @@ public class MyFirstClass {
 //       String userInput = scanner.nextLine();
 //
 //       System.out.println("You entered: --> \"" + userInput + "\" <--");
+//
+//
+//       System.out.println("Enter a number: ");
+//       int userNum = scanner.nextInt();
+//       System.out.println("Your number is: " + userNum);
 
 
-       System.out.println("Enter a number: ");
-       int userNum = scanner.nextInt();
-       System.out.println("Your number is: " + userNum);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    }
 }
