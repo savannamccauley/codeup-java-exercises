@@ -21,7 +21,7 @@ public class Input {
         return input.equals("y") || input.equals("yes");
     }
 
-    public int getInt(int min, int max) {
+    public static int getInt(int min, int max) {
         System.out.println("Enter a number between " + min + "and " + max);
         int input = scanner.nextInt();
         if (input < min || input > max) {
