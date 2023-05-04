@@ -37,14 +37,26 @@ public class GradeApplication {
 //           System.out.println(student.getName());
 //           System.out.println(student.getGradeAverage());
 //       }
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        String userInput;
 
         System.out.println("Welcome");
         System.out.println("Here are the GitHub usernames of our students:");
         for (String name : students.keySet()){
             System.out.print(" | " +name+ " | ");
         }
-        System.out.println("");
+        System.out.println("What student would you like to see more information on?");
+        userInput = scanner.nextLine().toLowerCase();
 
+        if(students.containsKey(userInput)){
+            Student student = students.get(userInput);
+            System.out.println("Name: " + student.getName());
+            System.out.println("Git " + student);
+            System.out.println("Average Grade" + student.getGradeAverage());
+        }else {
+            System.out.println("No student found with that name");
+            System.out.println("Would you like to see another student?");
+            userInput = scanner.nextLine();
+        }
     }
 }
