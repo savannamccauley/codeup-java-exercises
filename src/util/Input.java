@@ -5,7 +5,7 @@ import org.w3c.dom.ls.LSOutput;
 import java.util.Scanner;
 
 public class Input {
-    private Scanner scanner;
+    private static Scanner scanner;
 
     public Input() {
         this.scanner = new Scanner(System.in);
@@ -22,32 +22,59 @@ public class Input {
     }
 
     public static int getInt(int min, int max) {
-        System.out.println("Enter a number between " + min + "and " + max);
-        int input = scanner.nextInt();
-        if (input < min || input > max) {
+        System.out.println("Enter a number between " + min + " and " + max + ":");
+        try {
+            String input = scanner.nextLine();
+            int value = Integer.valueOf(input);
+            if (value < min || value > max) {
+                System.out.println("Input out of range. Try again.");
+                return getInt(min, max);
+            }
+            return value;
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please enter a valid integer.");
             return getInt(min, max);
         }
-        return input;
     }
+
 
     public int getInt() {
-        int input = scanner.nextInt();
-        return input;
+        try {
+            String input = scanner.nextLine();
+            return Integer.valueOf(input);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please enter a valid integer.");
+            return getInt();
+        }
     }
-    public double getDouble(double min, double max){
-        System.out.println("Enter a number between "+ min +"and " + max);
-        double input = scanner.nextDouble();
-        if (input < min || input > max) {
+
+    public static double getDouble(double min, double max) {
+        System.out.println("Enter a number between " + min + " and " + max + ":");
+        try {
+            String input = scanner.nextLine();
+            double value = Double.valueOf(input);
+            if (value < min || value > max) {
+                System.out.println("Input out of range. Try again.");
+                return getDouble(min, max);
+            }
+            return value;
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please enter a valid double.");
             return getDouble(min, max);
         }
-        return input;
-
-    }
-    public double getDouble(){
-        return scanner.nextDouble();
     }
 
+    public double getDouble() {
+        try {
+            String input = scanner.nextLine();
+            return Double.valueOf(input);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please enter a valid double.");
+            return getDouble();
+        }
+    }
 }
+
 
 
 
